@@ -5,16 +5,16 @@
 	"templateType":"standard",
     "pageTypes":["home"],
     "tags": {
-    "en": ["minimal", "clean", "photography", "modern", "colorful", "colourful", "flexible", "open", "simple", "travel", "sans-serif", "stylish", "slideshow", "gallery"],
-    "es": ["minimalista", "limpio", "fotografico", "moderno", "colorido", "flexible", "abierto", "simple", "vacaciones", "sans-serif", "estilo", "slideshow", "galería"],
-    "br": ["minimalista", "limpo", "fotografia", "moderno", "colorido", "flexível", "aberto", "simples", "Férias", "sans-serif", "estilo", "slideshow", "galeria"]
+    "en": ["minimal", "clean", "photography", "modern", "colorful", "colourful", "flexible", "open", "simple", "travel", "serif", "stylish", "slideshow", "gallery"],
+    "es": ["minimalista", "limpio", "fotografico", "moderno", "colorido", "flexible", "abierto", "simple", "vacaciones", "serif", "estilo", "slideshow", "galería"],
+    "br": ["minimalista", "limpo", "fotografia", "moderno", "colorido", "flexível", "aberto", "simples", "Férias", "serif", "estilo", "slideshow", "galeria"]
     },
 	"colorSwatches":
        {
         "Swatch 1": {
             "color1":"#ffffff",
             "color2":"#ebeef2",
-            "color3":"#3b98be",
+            "color3":"#43505c",
             "color4":"#43505c",
             "color5":"#7f8f9e",
             "color6":"#43505c",
@@ -26,8 +26,8 @@
             "color3":"#5d94ba",
             "color4":"#46556d",
             "color5":"#898a8c",
-            "color6":"#FFFFFF",
-            "color7":"#302f2e"
+            "color6":"#46556d",
+            "color7":"#ffffff"
         },
         "Swatch 3": {
             "color1":"#ffffff",
@@ -35,8 +35,8 @@
             "color3":"#EE7C7C",
             "color4":"#46556d",
             "color5":"#898a8c",
-            "color6":"#FFFFFF",
-            "color7":"#7A7C80"
+            "color6":"#46556d",
+            "color7":"#ffffff"
         },
         "Swatch 4": {
             "color1":"#fcfcfc",
@@ -44,17 +44,17 @@
             "color3":"#f59a32",
             "color4":"#46556d",
             "color5":"#898a8c",
-            "color6":"#FFFFFF",
-            "color7":"#1B1A19"
+            "color6":"#46556d",
+            "color7":"#ffffff"
         },
         "Swatch 5": {
             "color1":"#fcfcfc",
             "color2":"#F0F1F3",
-            "color3":"#f59a32",
+            "color3":"#16a1c4",
             "color4":"#454F5E",
             "color5":"#5c5956",
-            "color6":"#FFFFFF",
-            "color7":"#4E4C4B"
+            "color6":"#454F5E",
+            "color7":"#ffffff"
         }
     },
     "fontSwatch": {
@@ -117,8 +117,8 @@
             "line-height": "22px",
             "color": "@color-swatch1",
             "letter-spacing": "inherit",
-            "background-color": "@color-swatch6",
-            "background-color-hover": "darken(@color-swatch6, 10%)"
+            "background-color": "@color-swatch3",
+            "background-color-hover": "darken(@color-swatch3, 10%)"
         },
         "font8": {
             "font-family": "\"Merriweather\", Georgia, serif",

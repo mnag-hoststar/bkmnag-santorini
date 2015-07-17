@@ -307,7 +307,7 @@ form {
 	float: left;
 	margin-right: 40px;
 	height: 200px;
-	border: 3px solid darken(@color-swatch2, 5%);
+	border: 3px solid fade(@color-swatch5, 10%);
 	background-size: cover;
 	background-position: center;
     -webkit-transition: border .2s;
@@ -421,7 +421,7 @@ body.edit .widget.navigation, body.edit .widget.extendednavigation {
   z-index: 9999;
   width: 100%;
   border-bottom: 1px solid fade(@color-swatch6, 10%);
-  background-color: @color-swatch1;
+  background-color: @color-swatch2;
 }
 
 
@@ -482,7 +482,7 @@ body.edit .widget.navigation, body.edit .widget.extendednavigation {
 
 
 .bk-header {
-    background-color: @color-swatch7;
+    background-color: @color-swatch2;
     padding: 25px 0 18px;
     margin: 0;
     border-bottom: 0;
@@ -542,18 +542,18 @@ body.edit .widget.navigation, body.edit .widget.extendednavigation {
           margin: 70px 0 0;
           border: none;
           li {
-            border-bottom: 1px dotted darken(@color-swatch7,5%);
+            border-bottom: 1px dotted darken(@color-swatch2,10%);
             padding: 0;
             display: inline-block;
             width: 100%;
             &:hover {
-                background-color: @color-swatch2;
+                background-color: darken(@color-swatch2, 3%);
             }
             &:first-child {
-              border-top: 1px dotted darken(@color-swatch7,5%);
+              border-top: 1px dotted darken(@color-swatch2,10%);
             }
             &:last-child {
-              border-bottom: 1px dotted darken(@color-swatch7,5%);
+              border-bottom: 1px dotted darken(@color-swatch2,10%);
             }
             &.folder .text {
               &:after {
@@ -619,9 +619,9 @@ body.edit .widget.navigation, body.edit .widget.extendednavigation {
       width: 100%;
       margin: 0 0 0;
       padding: 0;
-      background-color: darken(@color-swatch7,3%);
+      background-color: darken(@color-swatch2,1%);
       li {
-        border-bottom: 1px dotted darken(@color-swatch7,5%);
+        border-bottom: 1px dotted darken(@color-swatch2,10%);
         &:last-child {
           border-bottom: none;
         }
@@ -643,7 +643,7 @@ body.edit .widget.navigation, body.edit .widget.extendednavigation {
 
   .widget .extendednavigation ul {
     li:hover > ul li:first-child {
-      border-top: none;
+      //border-top: none;
     }
   }
 
@@ -786,8 +786,18 @@ body.edit .widget.navigation, body.edit .widget.extendednavigation {
     }
 
     .slideshow-wrapper .widget.responsiveslideshow .slideshow-widget-controls {
-      margin: 10 auto;
-      display: none;
+      position: absolute;
+      left: 40%;
+      right: 40%;
+      bottom: 93%;
+      @media @tablet {
+          bottom: 90%;
+        }
+        @media @mobile {
+            left: 10%;
+            right: 10%;
+            bottom: 80%;
+        }
     }
 
     .widget.responsiveslideshow .slideshow-widget .btn-play {
@@ -817,11 +827,11 @@ body.edit .widget.navigation, body.edit .widget.extendednavigation {
 		border-radius: 50px;
 		cursor: pointer;
 		margin: 4px;
-		background-color: @color-swatch3;
+		background-color: lighten(@color-swatch6, 50%);
     }
 
     .slideshow-wrapper .widget.responsiveslideshow .slideshow-widget-controls .dot.selected {
-		background-color: @color-swatch7;
+		background-color: lighten(@color-swatch6, 20%);
 		border: 0;
     }
 
@@ -1192,7 +1202,7 @@ body.edit .widget.navigation, body.edit .widget.extendednavigation {
 }
 
 hr.line {
-   background-color: @color-swatch2;
+   background-color: fade(@color-swatch5, 20%);
    height: 1px;
    width: 100%;
    border: none;
@@ -2081,7 +2091,7 @@ height: 95px;
 
     .slideshow-wrapper {
       position: relative;
-      top: -86px;
+      //top: -86px;
      }
 
 
@@ -2090,7 +2100,7 @@ height: 95px;
     }
 
     .slideshow-wrapper .widget.responsiveslideshow .slideshow-image-list {
-          height:496px;
+          height: 400px;
     }
 
 
@@ -2287,7 +2297,7 @@ height: 95px;
 @media only screen and (max-width: 624px) {
 
      .slideshow-wrapper {
-      top: -92px;
+      //top: -92px;
     }
 }
 
