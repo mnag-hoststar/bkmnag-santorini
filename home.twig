@@ -6,7 +6,7 @@
 
 	{% include "header.twig" %}
 	
-		<div class="slideshow-wrapper">
+		<div class="home-slideshow-wrapper">
 			{{widget('responsiveslideshow', 'responsiveslideshow',
 				{'duration':'6',
 					'transSpeed': '1000',
@@ -15,13 +15,16 @@
 					'showBullets': true,
 					'allowPause': false,
 					'allowLoop': true,
-					'showDescription': false,
-					'showTitle': false,
+					'showDescription': true,
+					'showTitle': true,
 					'crop': true,
 					'images': [
-						{'imageHeight':'auto', 'imageWidth':'100%', 'url':asset('/images/gallery/1.jpg'), 'title':'', 'description': ''},
-						{'imageHeight':'auto', 'imageWidth':'100%', 'url':asset('/images/gallery/2.jpg'), 'title':'', 'description': ''},
-						{'imageHeight':'auto', 'imageWidth':'100%', 'url':asset('/images/gallery/3.jpg'), 'title':'', 'description': ''}
+						{'imageHeight':'auto', 'imageWidth':'100%', 'url':asset('/images/gallery/1.jpg'), 'title':'And the eternal rock continues to stand, strong and majestic, 
+						rising proudly from the sea and guarding well the secrets of Atlantis…', 'description': 'book now'},
+						{'imageHeight':'auto', 'imageWidth':'100%', 'url':asset('/images/gallery/2.jpg'), 'title':'And the eternal rock continues to stand, strong and majestic, 
+						rising proudly from the sea and guarding well the secrets of Atlantis…', 'description': 'book now'},
+						{'imageHeight':'auto', 'imageWidth':'100%', 'url':asset('/images/gallery/3.jpg'), 'title':'And the eternal rock continues to stand, strong and majestic, 
+						rising proudly from the sea and guarding well the secrets of Atlantis…', 'description': 'book now'}
 					]
 				})|raw
 			}}

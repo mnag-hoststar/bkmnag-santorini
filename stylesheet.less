@@ -661,7 +661,7 @@ body.edit .widget.navigation, body.edit .widget.extendednavigation {
    HOMEPAGE SLIDESHOW WIDGET
    =============================== */
 
-    /* Slideshow on editor */
+    /* Slideshow on editor
 
    .slideshow-wrapper .widget.responsiveslideshow .bk-overlay .bk-icons-bar {
       height: 250px;
@@ -687,8 +687,6 @@ body.edit .widget.navigation, body.edit .widget.extendednavigation {
       position: absolute;
       bottom: 0;
     }
-
-    /**/
 
 
     .slideshow-wrapper {
@@ -861,8 +859,97 @@ body.edit .widget.navigation, body.edit .widget.extendednavigation {
       height:659px;
 
     }
-}
+} */
 
+.home-slideshow-wrapper {
+    position: relative;
+    overflow: hidden;
+    height: 100%;
+    .widget.responsiveslideshow {
+        margin-top: 0;
+        height: 100%;
+        .slideshow-widget, .slideshow-image-list {
+            //min-height: 800px;
+            height: 70vh;
+            .crop span.inner {
+                background-size: cover;
+            }
+        }
+        .slideshow-widget-controls {
+            position: absolute;
+            top: 50px;
+            left: 0;
+            right: 0;
+            @media @tablet {
+                top: 40px;
+            }
+            @media @mobile {
+                top: 30px;
+            }
+        }
+        .content-wrapper {
+            background-color: transparent;
+            width: 90%;
+            max-width: 1200px;
+            top: 50%;
+            left: 50%;
+            right: 0;
+            transform: translate(-50%, -50%);
+            -webkit-transform: translate(-50%, -50%);
+            text-align: left;
+            height: 70%
+            span {
+            }
+            .title {
+                padding: 0 35% 0 0;
+                margin-bottom: 20px;
+                font-family: @font-swatch8-font-family;
+                font-weight: @font-swatch8-font-weight;
+                font-size: @font-swatch8-font-size;
+                line-height: @font-swatch8-line-height;
+                color: @font-swatch8-color;
+                letter-spacing: @font-swatch8-letter-spacing;
+                font-style: italic;
+                @media @tablet {
+                    font-size: bkscale(@font-swatch8-font-size, 0.85);
+                    line-height: bkscale(@font-swatch8-line-height, 0.85);
+                    padding: 0 20% 0 0;
+                }
+                @media @mobile {
+                    font-size: bkscale(@font-swatch8-font-size, 0.7);
+                    line-height: bkscale(@font-swatch8-line-height, 0.7);
+                    padding: 0;
+                }
+            }
+            .description {
+                display: inline-block;
+                padding: 10px 40px;
+                text-transform: uppercase;
+                font-family: @font-swatch7-font-family;
+                font-weight: @font-swatch7-font-weight;
+                font-size: @font-swatch7-font-size;
+                line-height: @font-swatch7-line-height;
+                color: @font-swatch7-color;
+                letter-spacing: @font-swatch7-letter-spacing;
+                background-color: @font-swatch7-background-color;
+                @media @tablet {
+                    font-size: bkscale(@font-swatch9-font-size, 0.9);
+                    line-height: bkscale(@font-swatch9-line-height, 0.9);
+                }
+                @media @mobile {
+                    font-size: bkscale(@font-swatch9-font-size, 0.8);
+                    line-height: bkscale(@font-swatch9-line-height, 0.8);
+                }
+            }
+        }
+    }
+    .widget.responsiveslideshow li.slideshow-image-item, .widget.responsiveslideshow span.inner, 
+	.widget.responsiveslideshow .image-wrapper, .widget.responsiveslideshow .slideshow-image-item {
+        @media @mobile {
+            height: 70vh;
+        }
+	}
+}
 
 
 
@@ -2346,7 +2433,8 @@ height: 95px;
     .slideshow-wrapper .widget.responsiveslideshow span.inner img {
        width: 100%;
     }
-	.widget.responsiveslideshow li.slideshow-image-item, .widget.responsiveslideshow span.inner, .widget.responsiveslideshow .image-wrapper, .widget.responsiveslideshow .slideshow-image-item {
+	.widget.responsiveslideshow li.slideshow-image-item, .widget.responsiveslideshow span.inner, 
+	.widget.responsiveslideshow .image-wrapper, .widget.responsiveslideshow .slideshow-image-item {
        height:208px;
     }
 
