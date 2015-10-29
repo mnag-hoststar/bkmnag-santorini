@@ -437,8 +437,6 @@ body.edit .widget.navigation, body.edit .widget.extendednavigation {
 .companyheader {
     display: block;
     float: left;
-    padding: 0;
-    height: 65px;
 }
 
 .logo-companyname {
@@ -498,13 +496,13 @@ body.edit .widget.navigation, body.edit .widget.extendednavigation {
     width: 100%;
     background-color: @color-swatch7;
     border-bottom: 2px solid darken(@color-swatch7,7%);
-} */
+}
 
 .widget.companyheader {
-    width: 100%;
+    width: 30%;
     display: block;
     margin: 0 auto;
-}
+} */
 
 /* ===============================
    EXTENDED NAV IN HOME PAGE
@@ -514,14 +512,14 @@ body.edit .widget.navigation, body.edit .widget.extendednavigation {
     display: none;
 }
 
-.bk-header .nav {
+/*.bk-header .nav {
   width: 50%;
   float: right;
   @media @tablet {
     width: 100%;
     float: none;
   }
-}
+} */
 
 /* ===============================
    EXTENDED NAV IN DEFAULT PAGE
@@ -529,73 +527,46 @@ body.edit .widget.navigation, body.edit .widget.extendednavigation {
 
  /* DEFAULT PAGE - NAV */
 
-   .widget .extendednavigation {
-   		min-height: 40px;
-        max-width: 100%;
-        position: static;
-        display: inline-block;
-        width: 100%;
-        margin: 0px;
-        ul {
-          width: 100%;
-          display: none;
-          margin: 70px 0 0;
-          border: none;
-          li {
-            border-bottom: 1px dotted darken(@color-swatch2,10%);
-            padding: 0;
+.widget .extendednavigation {
+    ul {
+        li {
             display: inline-block;
-            width: 100%;
             &:hover {
                 background-color: darken(@color-swatch2, 3%);
             }
-            &:first-child {
-              border-top: 1px dotted darken(@color-swatch2,10%);
-            }
-            &:last-child {
-              border-bottom: 1px dotted darken(@color-swatch2,10%);
-            }
             &.folder .text {
-              &:after {
-                  content: "\25BC";
-                  font-size: 7px;
-                  position: absolute;
-                  top: 4px;
-                  display: block;
-                  z-index: 9999999;
-                  right: 0;
-                  color: @color-swatch6;
-              }
+                &:after {
+                    content: "\25BC";
+                    font-size: 7px;
+                    position: absolute;
+                    top: 4px;
+                    display: block;
+                    z-index: 9999999;
+                    right: 0;
+                    color: @color-swatch6;
+                }
             }
-          }
-          .text {
+        }
+        .text {
             padding-top: 10px;
             padding-bottom: 10px;
             display: inline-block;
-          }
-        }
-        a.pull {
-          display: block;
-          width: 20px;
-          height: 20px;
-          position: absolute;
-          top: 10px;
-          right: 0;
-          &:hover {
-            border-bottom: 0;
-        }
-          &:after {
-            content:"";
-            background: image('/images/nav-icon.png') no-repeat center;
-            width: 100%;
-            height: 100%;
-            display: inline-block;
-            position: absolute;
-            right: 0;
-            top: 0;
-          }
         }
     }
+    a.pull {
+        display: none;
+        &:after {
+                content:"";
+                background: image('/images/nav-icon.png') no-repeat center;
+                width: 100%;
+                height: 100%;
+                display: inline-block;
+                position: absolute;
+                right: 0;
+                top: 0;
+        }
+    }
+}
 
  
 
@@ -2197,11 +2168,8 @@ height: 95px;
 
 
     .widget.extendednavigation {
-        display: block;
         width: 100%;
-        margin-top: 0px;
         float: right;
-        padding: 10px 0 0;
     }
 
 
@@ -2218,12 +2186,6 @@ height: 95px;
 
   .widget .extendednavigation a.pull {
     display: block;
-    width: 100%;
-    position: absolute;
-    bottom: 0;
-    top: 30px;
-    width: 20px;
-    height: 20px;
   }
 
   .widget .extendednavigation a.pull:after {
@@ -2329,9 +2291,6 @@ height: 95px;
     }
   }
 
-  .widget .extendednavigation ul {
-    margin: 40px 0 0;
-  }
 
     /* FEATURE */
 

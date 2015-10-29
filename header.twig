@@ -1,13 +1,11 @@
 <div class="header-wrapper clearfix">
 	<header class="bk-header">
 		<div class="wrapper clearfix">
-			<div class="nav">
-				{{widget('extendednavigation', 'navigationheader', {"align":"right"})|raw}}
-			</div>
-			<div class="logo-companyname">
+			<div class="companyheader">
 				{{widget('logo', 'logo', {"defaultlogo": asset('images/logo.png')})|raw}}
 				{{widget('companyname', 'companyname', {"business": "profile"})|raw}}
 			</div>
+			{{widget('extendednavigation', 'navigationheader', {"align":"right"})|raw}}
 		</div>
 	</header>
 </div>
