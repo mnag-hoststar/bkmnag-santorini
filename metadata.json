@@ -3,7 +3,7 @@
 	"thumbnail":"santorini.png",
 	"screenshot":"santorini.png",
 	"templateType":"standard",
-    "pageTypes":["home"],
+    "pageTypes":["home", "gallery", "contact"],
     "tags": {
     "en": ["minimal", "clean", "photography", "modern", "colorful", "colourful", "flexible", "open", "simple", "travel", "serif", "stylish", "slideshow", "gallery"],
     "es": ["minimalista", "limpio", "fotografico", "moderno", "colorido", "flexible", "abierto", "simple", "vacaciones", "serif", "estilo", "slideshow", "galería"],
@@ -118,7 +118,7 @@
             "color": "@color-swatch1",
             "letter-spacing": "inherit",
             "background-color": "@color-swatch3",
-            "background-color-hover": "darken(@color-swatch3, 10%)"
+            "background-color-hover": "@color-swatch3"
         },
         "font8": {
             "font-family": "\"Merriweather\", Georgia, serif",
@@ -133,7 +133,7 @@
             "font-size": "20px",
             "font-weight": "300",
             "line-height": "30px",
-            "color": "darken(@color-swatch4,20%)",
+            "color": "@color-swatch4",
             "letter-spacing": "inherit"
         },
         "font10": {

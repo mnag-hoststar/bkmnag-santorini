@@ -1,7 +1,7 @@
 Santorini
 ======
 
-BaseKit's Tarifa Template
+BaseKit's Santorini Template
 
 SLIDESHOW IMAGE GALLERY ON HOMEPAGE:
 

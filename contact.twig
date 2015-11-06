@@ -1,10 +1,16 @@
 {% extends "layout.twig" %}
 
 {% block content %}
-
-	<div class="bk-pt-default">
 	
-		{% include "header.twig" %}
+	{% include "header.twig" %}
+
+	<div class="bk-pt-contact">
+
+		<div class="image-wrapper">
+		        {{widget('image', 'contactheaderimage', {
+  					'src': asset('images/gallery/1.jpg')
+				})|raw}}
+		</div>
 	
 		<div class="canvas contact-page">
 			<div class="main wrapper clearfix">
