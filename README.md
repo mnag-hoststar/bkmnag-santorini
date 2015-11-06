@@ -1,4 +1,4 @@
-Tarifa
+Santorini
 ======
 
 BaseKit's Tarifa Template
