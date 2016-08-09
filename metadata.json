@@ -1,7 +1,7 @@
 {
 	"name":"Santorini",
-	"thumbnail":"santorini.png",
-	"screenshot":"santorini.png",
+	"thumbnail":"thumbnail.png",
+	"screenshot":"santorini-screenshot.jpg",
 	"templateType":"standard",
     "pageTypes":["home", "gallery", "contact"],
     "tags": {
