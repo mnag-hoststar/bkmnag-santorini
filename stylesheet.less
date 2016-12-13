@@ -168,16 +168,12 @@ input[type=email],
 input[type=search],
 textarea,
 select {
+    color: @font-swatch5-color;
 	text-indent: 0;
 	padding: 7px 10px;
-	text-align: left;
 	border: 1px solid fade(@color-swatch5, 50%);
     background-color: transparent;
-    -webkit-transition: border .5s;
-    -moz-transition: border .5s;
-    -ms-transition: border .5s;
-    transition: border .5s;
-	color: @font-swatch5-color;
+    .transition( all, 0.5s, ease);
 	&:hover {
 		border: 1px solid fade(@color-swatch5, 75%);
 	}
@@ -187,9 +183,6 @@ select {
 	}
 }
 
-input[type="search"]::-webkit-search-decoration, input[type="email"]::-webkit-search-decoration {
-	display: none;
-}
 .widget.profile form fieldset input
 input[type=submit], button, .btn, a.btn,
 .widget.signupform fieldset button.btn,
@@ -245,9 +238,6 @@ button.btn:disabled:hover,
 	display: inline-block;
 }
 
-button.btn {
-	margin: 0;
-}
 
 .widget.ecomcheckout table tr td .checkout-quantitybtn button {
 	padding: 1px 10px 7px;
@@ -261,23 +251,6 @@ button.btn {
 	background-image: image('/images/ic-desktop-call.png');
 }
 
-form {
-	label {
-		display: block;
-	}
-	input[type=text],
-	input[type=email],
-	input[type=search] {
-		width: 90%;
-		height: 42px;
-		@media @mobile {
-		    width: 100%;
-		}
-	}
-	input[type=submit] {
-		height: 42px;
-	}
-}
 .widget.paypalbuynow .widget.button.paypal,
 .widget.tweet a,
 .widget.dropbox .b-wrap .btn,
@@ -1173,15 +1146,8 @@ hr.line.align-right {
    CONTACT FORM WIDGET
    =============================== */
 
-.widget.contactform form {
-    display: block;
-    margin-bottom: 20px;
-    background-color: @color-swatch1;
-}
-
-.widget.contactform form fieldset {
-    border: none;
-    padding: 0;
+.form-group {
+    margin-bottom: 1.5em;
 }
 
 .contactform label, .advancedcontactform label {
