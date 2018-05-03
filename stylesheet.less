@@ -636,7 +636,6 @@ body.edit .widget.navigation, body.edit .widget.extendednavigation {
 .language-selector__name,
 .language-selector__localised-name {
 	.language-selector & {
-		text-shadow: 0 1px 1px fade(@color-swatch7, 20%);
         text-rendering: auto;
 	}
 	
@@ -769,7 +768,7 @@ body.edit .widget.navigation, body.edit .widget.extendednavigation {
     ul {
         li {
             display: inline-block;
-            &:hover {
+            &:hover, &.selected {
                 background-color: darken(@color-swatch2, 3%);
 				
 				.text {
