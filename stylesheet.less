@@ -1,5 +1,166 @@
 @import "@{templateCommon}/basekit-bootstrap.less";
 
+
+/* ===============================
+   MIXINS
+   =============================== */
+
+// ------------------------------
+// #Flexbox LESS mixins
+// The spec: http://www.w3.org/TR/css3-flexbox
+// ------------------------------
+
+// Flexbox display
+// flex or inline-flex
+.display-flex(@display: flex) {
+    display: ~"-webkit-@{display}";
+    display: ~"-moz-@{display}";
+    display: ~"-ms-@{display}box"; // IE10 uses -ms-flexbox
+    display: ~"-ms-@{display}"; // IE11
+    display: @display;
+}
+
+// The 'flex' shorthand
+// - applies to: flex items
+// <positive-number>, initial, auto, or none
+.flex(@columns: initial) {
+	-webkit-flex: @columns;
+	-moz-flex: @columns;
+	-ms-flex: @columns;
+	flex: @columns;
+}
+
+// Flex Flow Direction
+// - applies to: flex containers
+// row | row-reverse | column | column-reverse
+.flex-direction(@direction: row) {
+	-webkit-flex-direction: @direction;
+	-moz-flex-direction: @direction;
+	-ms-flex-direction: @direction;
+	flex-direction: @direction;
+}
+
+// Flex Line Wrapping
+// - applies to: flex containers
+// nowrap | wrap | wrap-reverse
+.flex-wrap(@wrap: nowrap) {
+	-webkit-flex-wrap: @wrap;
+	-moz-flex-wrap: @wrap;
+	-ms-flex-wrap: @wrap;
+	flex-wrap: @wrap;
+}
+
+// Flex Direction and Wrap
+// - applies to: flex containers
+// <flex-direction> || <flex-wrap>
+.flex-flow(@flow) {
+	-webkit-flex-flow: @flow;
+	-moz-flex-flow: @flow;
+	-ms-flex-flow: @flow;
+	flex-flow: @flow;
+}
+
+// Display Order
+// - applies to: flex items
+// <integer>
+.flex-order(@order: 0) {
+	-webkit-order: @order;
+	-moz-order: @order;
+	-ms-order: @order;
+	-ms-flex-order: @order;
+	flex-order: @order;
+	order: @order;
+}
+
+// Flex grow factor
+// - applies to: flex items
+// <number>
+.flex-grow(@grow: 0) {
+	-webkit-flex-grow: @grow;
+	-moz-flex-grow: @grow;
+	-ms-flex-grow: @grow;
+	flex-grow: @grow;
+}
+
+// Flex shrink
+// - applies to: flex item shrink factor
+// <number>
+.flex-shrink(@shrink: 1) {
+	-webkit-flex-shrink: @shrink;
+	-moz-flex-shrink: @shrink;
+	-ms-flex-shrink: @shrink;
+	flex-shrink: @shrink;
+}
+
+// Flex basis
+// - the initial main size of the flex item
+// - applies to: flex items, initial main size of the flex item
+// <width>
+.flex-basis(@width: auto) {
+	-webkit-flex-basis: @width;
+	-moz-flex-basis: @width;
+	-ms-flex-basis: @width;
+	flex-basis: @width;
+	max-width:  @width;
+}
+
+// Axis Alignment
+// - applies to: flex containers
+// flex-start | flex-end | center | space-between | space-around
+// For -ms-flex-pack
+// start | end | center | stretch | justify | distribute
+.justify-content(@justify: flex-start, @ms-justify: start) {
+	-webkit-justify-content: @justify;
+	-moz-justify-content: @justify;
+	-ms-justify-content: @justify;
+	-ms-flex-pack: @ms-justify;
+	justify-content: @justify;
+}
+
+// Packing Flex Lines
+// - applies to: multi-line flex containers
+// flex-start | flex-end | center | space-between | space-around | stretch
+// For -ms-flex-line-pack
+// start | end | center | stretch | justify | distribute
+.align-content(@align: stretch, @ms-align: stretch) {
+	-webkit-align-content: @align;
+	-moz-align-content: @align;
+	-ms-align-content: @align;
+	-ms-flex-line-pack: @align;
+	align-content: @align;
+}
+
+// Cross-axis Alignment
+// - applies to: flex containers
+// flex-start | flex-end | center | baseline | stretch
+// For -ms-flex-align
+// start | end | center | stretch | justify | distribute
+.align-items(@align: stretch, @ms-align: stretch) {
+	-webkit-align-items: @align;
+	-moz-align-items: @align;
+	-ms-align-items: @align;
+	-ms-flex-align: @align;
+	align-items: @align;
+}
+
+// Cross-axis Alignment
+// - applies to: flex items
+// auto | flex-start | flex-end | center | baseline | stretch
+// For -ms-flex-item-align
+// start | end | center | stretch | justify | distribute
+.align-self(@align: auto, @ms-align: start) {
+	-webkit-align-self: @align;
+	-moz-align-self: @align;
+	-ms-align-self: @align;
+	-ms-flex-item-align: @ms-align;
+	align-self: @align;
+}
+
+
+/* ===============================
+   MAIN
+   =============================== */
+
 .transition (@prop: all, @time: 0.7s, @ease: ease-in-out) {
 	-webkit-transition: @prop @time @ease;  
 	-moz-transition:    @prop @time @ease;
@@ -17,6 +178,7 @@ body {
     max-width: 1200px;
 	width: 90%;
     margin: 0 auto;
+	
 	.wrapper {
 		width: 100%;
 		margin: 0;
@@ -694,7 +856,6 @@ body.edit .widget.navigation, body.edit .widget.extendednavigation {
    HEADER
    =============================== */
 
-
 .header-wrapper {
   position: relative;
   top: 0;
@@ -704,22 +865,42 @@ body.edit .widget.navigation, body.edit .widget.extendednavigation {
   background-color: @color-swatch2;
 }
 
-.bk-header.wrapper {
-	width: 90%;
-}
+// Header overall alignment of elements
 
 .bk-header {
-    margin: 40px 0;
+    margin: 1em 0;
     background-color: transparent;
+	
+	.wrapper {
+		display: table;
+		.display-flex(flex);
+		.flex-wrap(nowrap);
+		margin: 0 1em 0 1.5em;
+		max-width: none;
+		width: auto;
+            
+		@media @tablet {
+			display: block;
+			margin: 0 1em;
+		}
+	}
 }
 
-.companyheader {
-    display: block;
-    float: left;
+.companyheader,
+.widget.extendednavigation {
+	display: table-cell;
+	vertical-align: middle;
+	.display-flex(flex);
+	.align-items(center, center);
+            
+	@media @tablet {
+		display: block;
+		text-align: center;
+	}
 }
 
-.logo-companyname {
-    position: absolute;
+.widget.extendednavigation {
+	.flex-grow(1);
 }
 
 /* COMPANY NAME */
@@ -727,8 +908,13 @@ body.edit .widget.navigation, body.edit .widget.extendednavigation {
 
 .widget.companyname {
 	display: block;
-	float: left;
 	margin-top: 0;
+	margin-right: 2em;
+            
+	@media @tablet {
+		margin-right: 0;
+		text-align: center;
+	}
 	
 	a {
 		font-family: @font-swatch10-font-family;
@@ -737,6 +923,8 @@ body.edit .widget.navigation, body.edit .widget.extendednavigation {
 		line-height: @font-swatch10-line-height;
 		letter-spacing: @font-swatch10-letter-spacing;
 		font-size: @font-swatch10-font-size;
+		word-wrap: normal;
+		word-break: normal;
 		
 		&:hover {
 			text-decoration: none;
@@ -749,10 +937,11 @@ body.edit .widget.navigation, body.edit .widget.extendednavigation {
 /* LOGO */
 
 .widget.logo {
-	display: block;
-	margin-right: 8px;
-	float: left;
-	padding-top: 6px;
+	margin-right: 2em;
+            
+	@media @tablet {
+		margin-right: 0;
+	}
 }
 
 
@@ -760,7 +949,7 @@ body.edit .widget.navigation, body.edit .widget.extendednavigation {
 
 .bk-header {
     background-color: @color-swatch2;
-    padding: 25px 0 18px;
+    padding: 1em 0;
     margin: 0;
     border-bottom: 0;
 }
@@ -769,26 +958,42 @@ body.edit .widget.navigation, body.edit .widget.extendednavigation {
 /* DEFAULT PAGE - HEADER */
 
 /* ===============================
-   EXTENDED NAV IN HOME PAGE
-   =============================== */
-
-.widget .extendednavigation ul li.folder:after {
-    display: none;
-}
-
-/* ===============================
    EXTENDED NAV IN DEFAULT PAGE
    =============================== */
 
  /* DEFAULT PAGE - NAV */
 
-.widget .extendednavigation {
+div.widget .extendednavigation {
 	display: block;
-	float: right;
+	width: 100%;
     
     ul {
+		&.align-left {
+			text-align: left;
+		}
+		
+		&.align-center {
+			text-align: center;
+		}
+		
+		&.align-right {
+			text-align: right;
+		}
+		
         li {
             display: inline-block;
+			
+			a {
+				color: @font-swatch6-color;
+				margin: 0;
+				padding: 0;
+				border-bottom: 0;
+			}
+				
+			.text {
+				padding: 0.25em 1em;
+				display: inline-block;
+			}
             
             &:hover, &.selected {
                 background-color: darken(@color-swatch2, 3%);
@@ -800,7 +1005,15 @@ body.edit .widget.navigation, body.edit .widget.extendednavigation {
             
             &.folder {
 				border-radius: 0;
+				margin: 0;
+				
+				&:after {
+					display: none;
+				}
+				
                 .text {
+					padding-right: 0.5em;
+					
 					&:hover {
 						color: @font-swatch6-color;
 					}
@@ -814,18 +1027,6 @@ body.edit .widget.navigation, body.edit .widget.extendednavigation {
 					}
                 }
             }
-        }
-		
-		a {
-			color: @font-swatch6-color;
-			margin: 0;
-			border-bottom: 0;
-		}
-		
-		.text {
-			padding-top: 0.25em;
-			padding-bottom: 0.25em;
-            display: inline-block;
         }
 		
 		li > ul {
@@ -1279,19 +1480,6 @@ body.edit .widget.navigation, body.edit .widget.extendednavigation {
 /* ===============================
    BUTTON CSS
    =============================== */
-
-.widget.button button {
-  /* padding: 15px 17px;
-  border: 2px solid @color-swatch7;
-  margin: 0 0 10px;
-  font-family: @font-swatch7-font-family;
-  font-size: @font-swatch7-font-size;
-  font-weight:@font-swatch7-font-weight;
-  background-color: @font-swatch7-background-color;
-  color: @font-swatch7-color;
-  text-decoration: none;
-  letter-spacing: 1px; */
-}
 
 /* JUSTIFY */
 
@@ -2230,11 +2418,10 @@ select, input[type=search] {
    IPAD WIDTH
    =============================== */
 
-@media only screen and (max-width: 768px) {
+@media @tablet {
     .bk-header {
         margin: 0;
         border-bottom: 0;
-        padding: 4px 0 14px;
     }
 
     .header-wrapper {
@@ -2243,18 +2430,6 @@ select, input[type=search] {
 		z-index: 9999;
 		width: 100%;
 		padding-bottom: 10px;
-    }
-
-    .widget.logo, .widget.companyname {
-		margin-top: 0;
-    }
-
-    .widget.logo {
-		padding-top: 27px;
-    }
-
-    .widget.companyname {
-		padding-top: 21px;
     }
 
     .widget.companyheader {
@@ -2297,119 +2472,122 @@ select, input[type=search] {
 
     /* NAV */
 
-    .widget.extendednavigation {
+    div.widget.extendednavigation {
         width: 100%;
         float: right;
 		min-height: 40px;
 		top: 10px;
-    }
 
-    .widget.extendednavigation .bk-overlay {
-        height: 85px;
-        width: 12%;
-        right: 0px;
-        left: 92% !important;
-    }
-
-     /* NAV ICON */
-
-	.widget .extendednavigation a.pull {
-		display: block;
-		top: 0;
-	}
-
-	/* NAV */
-
-	.widget .extendednavigation ul {
-		width: 100%;
-		display: none;
-		margin: 0;
-		border: none;
-	}
-
-	.widget.extendednavigation ul li {
-		border-bottom: 1px dotted @color-swatch6;
-		
-		&:first-child {
-			border-top: 1px dotted @color-swatch6;
+		.bk-overlay {
+			height: 85px;
+			width: 12%;
+			right: 0px;
+			left: 92% !important;
 		}
-	}
 
-	.widget.extendednavigation ul li:last-child {
-		border-bottom: none;
-	}
+		 /* NAV ICON */
 
-	.widget.extendednavigation ul li:hover .text {
-		color: @font-swatch6-color;
-	}
-
-	.widget.extendednavigation ul li:hover .text {
-		color: @font-swatch6-color;
-	}
-
-	.widget .extendednavigation li {
-		width: 100%;
-		padding: 0;
-	}
-
-	.widget.extendednavigation ul li a, .widget.extendednavigation ul li.folder .text {
-		color: @font-swatch6-color;
-		margin: 0;
-	}
-
-	.widget.extendednavigation ul li > ul {
-		display: none !important;
-	}
-
-	.widget.extendednavigation ul li:hover > ul {
-		display: block !important;
-		width: 100%;
-		margin: 0;
-		padding: 0;
-		background-color: darken(@color-swatch2,1%);
-		position: relative;
-	}
-
-	.widget.extendednavigation ul li:hover > ul > li {
-		border-bottom: 1px dotted @color-swatch6;
-	}
-
-	.widget.extendednavigation ul li:hover > ul > li:last-child {
-		border-bottom: none;
-	}
-
-	.widget.extendednavigation ul li:hover > ul > li .text {
-		color: @font-swatch6-color;
-	}
-
-	.widget.extendednavigation ul li:hover > ul > li:hover .text {
-		color: @font-swatch6-color;
-	}
-
-	.widget.extendednavigation ul li.folder .text:hover {
-		color: @font-swatch6-color;
-	}
-
-	.widget.extendednavigation ul li.folder {
-		border-radius: 0;
-		background-position: right 33px;
-	}
-
-	.widget.extendednavigation li:hover > ul {
-		position: relative;
-	}
-
-	.widget.extendednavigation li:hover > ul > li > a {
-		padding-left: 10px;
-	}
-
-	.widget .extendednavigation ul li:hover.folder {
-		padding-bottom: 10px;
-		
-		&:after {
-			top: 11.2%;
+		a.pull {
+			position: absolute;
+			top: 0;
+			left: 0;
+			display: block;
+			margin: 0 auto;
 		}
-	}
+
+		/* NAV */
+
+		ul {
+			width: 100%;
+			display: none;
+			margin: 0;
+			border: none;
+			
+			&.align-left,
+			&.align-center,
+			&.align-right {
+				text-align: center;
+			}
+
+			li {
+				width: 100%;
+				padding: 0;
+				border-bottom: 1px dotted @color-swatch6;
+
+				&:first-child {
+					border-top: 1px dotted @color-swatch6;
+				}
+				
+				&:last-child {
+					border-bottom: none;
+				}
+
+				&:hover .text {
+					color: @font-swatch6-color;
+				}
+
+				&:hover .text {
+					color: @font-swatch6-color;
+				}
+
+				a,
+				&.folder .text {
+					color: @font-swatch6-color;
+					margin: 0;
+				}
+
+				> ul {
+					display: none !important;
+				}
+
+				&:hover > ul {
+					display: block !important;
+					width: 100%;
+					margin: 0;
+					padding: 0;
+					background-color: darken(@color-swatch2,1%);
+					position: relative;
+
+					> li {
+						border-bottom: 1px dotted @color-swatch6;
+
+						&:last-child {
+							border-bottom: none;
+						}
+
+						.text {
+							color: @font-swatch6-color;
+						}
+
+						&:hover .text {
+							color: @font-swatch6-color;
+						}
+
+						> a {
+							padding-left: 10px;
+						}
+					}
+				}
+
+				&.folder {
+					border-radius: 0;
+					background-position: right 33px;
+					
+					.text:hover {
+						color: @font-swatch6-color;
+					}
+				}
+
+				&:hover.folder {
+					padding-bottom: 10px;
+
+					&:after {
+						top: 11.2%;
+					}
+				}
+			}
+		}
+    }
 
 
     /* FEATURE */
@@ -2471,7 +2649,7 @@ select, input[type=search] {
    IPHONE WIDTH
    =============================== */
 
-@media only screen and (max-width: 480px) {
+@media @mobile {
 
 	.blog-post-feature-image-wrap {
 		width: 100%;
@@ -2486,10 +2664,6 @@ select, input[type=search] {
 	
 	.widget.companyname a {
 		font-size: bkscale(@font-swatch10-font-size,0.7);
-	}
-	
-	.widget.companyname {
-		max-width: 223px;
 	}
 	
 	.widget.responsiveslideshow {
@@ -2598,27 +2772,23 @@ select, input[type=search] {
 	.widget.responsiveslideshow .slideshow-image-list, .widget.responsiveslideshow .slideshow-widget {
 		height: 200px;
 	}
-
-}
-
-
-@media (max-width: 480px) {
-  .productlist-display-form {
+	
+	.productlist-display-form {
 		select, label {
 			width: 100%;
 		}
 	}
-	
+
 	.basket-summary-items-table {
 		td, .basket-summary-subtotal {
 			padding: 10px;
 		}
-		
+
 		.image-wrap {
 			padding: 0;
 		}
 	}
-	
+
 	.basket-summary-items-table {
 		td, th {
 			float: left;
@@ -2626,24 +2796,24 @@ select, input[type=search] {
 			padding: 0 0 5px;
 		}
 	}
-	
+
 	.basket-summary-items-table .image-wrap {
 		padding-top: 5px;
 	}
-	
+
 	.basket-summary-amount-column,
 	.basket-summary-details-column {
 		display: none;
 	}
-	
+
 	.basket-summary-items-column {
 		text-align: left;
 	}
-	
+
 	.basket-summary-amount {
 		text-align: right;
 	}
-	
+
 	.basket-summary-subtotal {
 		padding: 0 0 10px;
 		text-align: left;
