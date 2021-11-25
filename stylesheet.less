@@ -2036,7 +2036,18 @@ hr.line {
 // CONTACT FORM WIDGET
 
 .form-group {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
     margin-bottom: 1.5em;
+
+    @media @mobile {
+        display: block;
+    }
+
+    .responsivecolumns & {
+        display: block;
+    }
 }
 
 .contactform label,
