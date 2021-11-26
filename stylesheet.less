@@ -1448,21 +1448,16 @@ div.widget .extendednavigation {
         form fieldset input {
             max-width: 600px;
             width: 100%;
+
+            @media @tablet {
+                max-width: none;
+                width: 100%;
+            }
         }
     
         form button.btn {
-            word-break: break-word;
-            height: auto;
-            width: auto;
-            max-width: 600px;
-            margin: 10px 0;
-            line-height: 1.25em;
             background-color: @font-swatch5-color;
             border: 1px solid @font-swatch5-color;
-
-            @media @tablet {
-                width: 100%;
-            }
 
             .style--light & {
                 background-color: lighten(@color--dark, 5%);
@@ -2515,7 +2510,7 @@ hr.line {
 
 .widget.signupform fieldset label {
     width: 100%;
-    float: left;
+    float: none;
     font-family: @font-swatch5-font-family;
     font-size: @font-swatch5-font-size;
     font-weight: @font-swatch5-font-weight;
@@ -2524,12 +2519,8 @@ hr.line {
     letter-spacing: @font-swatch5-letter-spacing;
 }
 
-.widget.signupform fieldset input, input[type=search] {
-    width: 100%;
-    margin-bottom: 20px;
-}
-
-.widget.signupform fieldset button.btn, .blog-search-submit-button {
+.widget.signupform fieldset button.btn,
+.blog-search-submit-button {
     @media @mobile {
         width: 100%;
     }
