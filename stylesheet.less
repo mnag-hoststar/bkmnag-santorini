@@ -347,10 +347,12 @@ input[type=email],
 input[type=search],
 textarea,
 select {
+    flex-grow: 1;
     color: @font-swatch5-color;
 	text-indent: 0;
 	padding: 7px 10px;
 	border: 1px solid fade(@color-swatch5, 50%);
+    height: auto;
     background-color: transparent;
     .transition( all, 0.5s, ease);
 
@@ -422,14 +424,31 @@ select {
 
 // Radiobuttons, Checkboxes
 
-.contactform .option-item--radio,
-.contactform .option-item--checkbox,
-.advancedcontactform .option-item--radio,
-.advancedcontactform .option-item--checkbox {
-	label {
-		label;
-		word-break: break-word;
-	}
+.contactform,
+.advancedcontactform {
+    .option-list {
+        .option-item--radio,
+        .option-item--checkbox {
+            .option-item label {
+                label;
+                word-break: break-word;
+                display: block;
+            }
+        }
+
+        input[type="radio"],
+        input[type="checkbox"] {
+            float: left;
+        }
+
+        input[type="radio"],
+        input[type="checkbox"],
+        .label--radio,
+        .label--checkbox {
+            display: block;
+            padding-left: 30px;
+        }
+    }
 }
 
 // Placeholders
@@ -507,9 +526,13 @@ input[type=submit], button, .btn, a.btn,
 .ecombasket-remove-button,
 .widget.ecombasket .ecombasket-list-container ul li .ecombasket-item-info .ecombasket-remove-button,
 .basket-summary-empty-cta,
-a.contentgroup__link {
+a.contentgroup__link,
+.contactform button,
+.contactform button.btn,
+.advancedcontactform button,
+.advancedcontactform button.btn {
 	display: inline-block;
-	padding: 10px 20px;
+	padding: 8px 20px;
 	vertical-align: middle;
 	font-family: @font-swatch7-font-family;
 	font-size: @font-swatch7-font-size;
@@ -522,6 +545,8 @@ a.contentgroup__link {
 	text-decoration: none;
 	border: 0;
 	.transition( all, 0.5s, ease);
+    min-height: 40px;
+    word-break: break-word;
 
     .style--light & {
         background-color: @color--dark;
@@ -536,6 +561,16 @@ a.contentgroup__link {
     .style--dark & {
         background-color: @color--accent;
         color: @contrast--accent;
+    }
+
+    @media @mobile {
+        margin: 10px 0;
+        width: 100%;
+    }
+
+    .responsivecolumns & {
+        margin: 10px 0;
+        width: 100%;
     }
 
 	&:hover {
