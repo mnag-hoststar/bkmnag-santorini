@@ -2679,10 +2679,12 @@ hr.line {
             
             @media @mobile {
                 width: 100%;
+                padding: 10px 0;
             }
 
             .responsivecolumns & {
                 width: 100%;
+                padding: 10px 0;
             }
         }
 
@@ -2699,11 +2701,11 @@ hr.line {
 			display: flex;
 			flex-wrap: wrap;
 			margin: 0 -10px;
-            padding: 10px 5px;
+            padding: 0 5px;
 
             .form-group {
                 margin: 0;
-                padding: 0 5px 20px;
+                padding: 0 5px 10px;
                 width: auto;
                 box-sizing: border-box;
 				flex-grow: 1;
@@ -2724,24 +2726,17 @@ hr.line {
 
                 select {
                     width: 100%;
+                    padding-right: 30px;
 
                     .responsivecolumns & {
                         width: 100%;
                     }
                 }
-
-                button.btn {
-                    line-height: 24px;
-                    font-size: 14px;
-                    padding: 8px 30px;
-                    display: inline-block;
-                    cursor: pointer;
-                    margin: 0;
-                }
 		
 				&.productlist-search {
 					display: flex;
 					flex-wrap: wrap;
+                    align-items: center;
 					width: auto;
 
                     label {
@@ -2907,15 +2902,8 @@ hr.line {
 	margin: 0 0 20px;
 	
 	input[type=search] {
-		padding-right: 90px;
 		box-sizing: border-box;
-		width: 100%;
-	}
-	
-	button {
-		position: absolute;
-		right: 0;
-		bottom: 10px;
+        width: auto;
 	}
 }
 
@@ -2951,7 +2939,7 @@ select, input[type=search] {
 }
 
 .productlist-item-count {
-  clear: both;
+    clear: both;
 }
 
 .productlist-display-form {
@@ -2961,11 +2949,6 @@ select, input[type=search] {
 	
 	label {
 		display: inline-block;
-		width: 19%;
-	}
-	
-	select {
-		width: 80%;
 	}
 }
 
