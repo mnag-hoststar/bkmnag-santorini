@@ -1,5 +1,7 @@
 @import "@{templateCommon}/basekit-bootstrap.less";
 
+@mobile-small: ~"only screen and (max-width: 380px)";
+
 // MIXINS
 
 .appearance(@appearance: none) {
@@ -1068,7 +1070,7 @@ a.contentgroup__link,
 		text-overflow: ellipsis;
 		
 		.language-selector--flag-text& {
-			@media only screen and (max-width: 380px) {
+			@media @mobile-small {
 				display: none;
 			}
 		}
