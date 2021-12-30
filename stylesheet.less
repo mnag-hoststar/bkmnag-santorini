@@ -141,30 +141,7 @@ body {
     }
 }
 
-a {
-	font-family: @font-swatch5-font-family;
-    font-size: @font-swatch5-font-size;
-    font-weight: @font-swatch5-font-weight;
-    color: @color-swatch3;
-    text-decoration: none;
-}
-
-[data-name="content"] a:hover {
-    text-decoration: none;
-    border-bottom: 1px solid @color-swatch3;
-
-    .style--light & {
-        border-color: @contrast--light;
-    }
-
-    .style--accent & {
-        border-color: @contrast--accent;
-    }
-
-    .style--dark & {
-        border-color: @contrast--dark;
-    }
-}
+// TYPOGRAPHY
 
 h1, h2, h3, h4, h5, p {
     margin: 0;
@@ -236,6 +213,8 @@ h5 {
     letter-spacing: @font-swatch5-letter-spacing;
 }
 
+// Normal Text
+
 p {
     font-family: @font-swatch5-font-family;
     font-size: @font-swatch5-font-size;
@@ -243,6 +222,26 @@ p {
     line-height: @font-swatch5-line-height;
     color: @font-swatch5-color;
     letter-spacing: @font-swatch5-letter-spacing;
+}
+
+.widget {
+	p, span, small, pre, code,
+	table, th, td,
+	&.content {
+		color: @font-swatch5-color;
+	
+		.style--light & {
+			color: @contrast--light;
+		}
+	
+		.style--accent & {
+			color: @contrast--accent;
+		}
+	
+		.style--dark & {
+			color: @contrast--dark;
+		}
+	}
 }
 
 p, ul, ol, li, .contentgroup__body, .widget.clicktocall a {
@@ -259,6 +258,35 @@ p, ul, ol, li, .contentgroup__body, .widget.clicktocall a {
     }
 }
 
+// Link
+
+a {
+	font-family: @font-swatch5-font-family;
+    font-size: @font-swatch5-font-size;
+    font-weight: @font-swatch5-font-weight;
+    color: @color-swatch3;
+    text-decoration: none;
+
+    [data-name="content"] &:hover {
+        text-decoration: none;
+        border-bottom: 1px solid @color-swatch3;
+    
+        .style--light & {
+            border-color: @contrast--light;
+        }
+    
+        .style--accent & {
+            border-color: @contrast--accent;
+        }
+    
+        .style--dark & {
+            border-color: @contrast--dark;
+        }
+    }
+}
+
+// List
+
 ul, ol, li {
     font-family: @font-swatch5-font-family;
     font-size: @font-swatch5-font-size;
@@ -271,6 +299,50 @@ ul, ol, li {
 .content .bk-content-text ol {
     list-style-position: inherit;
 }
+
+// Preformatted and Code Text
+
+pre, code {
+	display: block;
+	margin: 1em 0;
+	padding: 0.5em 1em;
+	border: none;
+	.border-radius(0);
+	background-color: darken(@color-swatch1, 10%);
+	overflow: auto;
+	.paragraph;
+	font-family: monospace;
+
+	.style--light & {
+		background-color: darken(@color--light, 10%);
+	}
+
+	.style--accent & {
+		background-color: lighten(@color--accent, 10%);
+	}
+
+	.style--dark & {
+		background-color: lighten(@color--dark, 10%);
+	}
+}
+
+code {
+	border-left: 1px solid @color-swatch5;
+
+	.style--light & {
+		border-color: @color--accent;
+	}
+
+	.style--accent & {
+		border-color: @contrast--accent;
+	}
+
+	.style--dark & {
+		border-color: @color--accent;
+	}
+}
+
+// Blockquote
 
 blockquote {
     padding: 30px;
