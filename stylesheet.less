@@ -702,6 +702,7 @@ tr:last-child td {
 input,
 .widget.signupform fieldset input, 
 .widget.profile form fieldset input,
+.userregistration fieldset input,
 input[type=text],
 input[type=email],
 input[type=search],
@@ -782,7 +783,7 @@ select {
 	}
 }
 
-// Radiobuttons and Checkboxes
+// RADIOBUTTONS AND CHECKBOXES
 
 .widget .form .option-list {
 	margin-top: 1em;
@@ -954,6 +955,42 @@ footer.bk-footer .widget.profile .form-group.profile__form-group.profile__form-g
 	}
 }
 
+// REGISTERATION FORM
+
+.widget.userregistration {
+	fieldset {
+		margin: 0 auto;
+		padding: 0;
+		border: none;
+		max-width: 400px;
+		
+		@media @mobile {
+			max-width: none;
+		}
+
+		.responsivecolumns & {
+			max-width: none;
+		}
+
+		input {
+			width: 100%;
+			box-sizing: border-box;
+		}
+
+		.error {
+			padding: 20px 0 0;
+
+			&[style*="display: block"] {
+				padding: 20px 0;
+			}
+
+			&[style*="display: none"] {
+				display: block !important;
+			}
+		}
+	}
+}
+
 // Placeholders
 
 ::-webkit-input-placeholder {
@@ -1033,7 +1070,8 @@ a.contentgroup__link,
 .contactform button,
 .contactform button.btn,
 .advancedcontactform button,
-.advancedcontactform button.btn {
+.advancedcontactform button.btn,
+.userregistration fieldset .userregistrationbtn {
 	display: inline-block;
 	padding: 8px 20px;
 	vertical-align: middle;
@@ -1126,7 +1164,7 @@ a.contentgroup__link,
 	}
 }
 
-// BLOG STYLES
+// BLOG
 
 .blog-post-item {
 	clear: both;
@@ -1261,7 +1299,8 @@ a.contentgroup__link,
 	display: block;
 }
 
-// MENU STYLES
+// MENU
+
 .menu {
     .menu-item {
         clear: both;
