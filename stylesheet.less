@@ -148,7 +148,9 @@ h1, h2, h3, h4, h5, p {
     padding: 0 0 10px;
 }
 
-h1, h2, h3, h4, h5, h6, [class*="contentgroup__h"], label, a {
+h1, h2, h3, h4, h5, h6,
+[class*="contentgroup__h"],
+label, .label, a {
     word-break: break-word;
 
     .style--light & {
@@ -2999,7 +3001,7 @@ hr.line {
     }
 }
 
-label {
+label, .label {
 	display: inline-block;
 	padding-bottom: .4em;
 }
