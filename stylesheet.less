@@ -3684,9 +3684,26 @@ select {
 
 // Single Product
 
-.widget.ecomproduct .ecom-product .btn.ecom-product-add-to-cart-btn .text:before {
-	content: "";
-	background-image: image('/images/basketicon.png');
+.widget.ecomproduct {
+    .ecom-product .btn.ecom-product-add-to-cart-btn .text:before {
+        content: "";
+        background-image: image('/images/basketicon.png');
+    }
+    
+    .product-actions {
+		button {
+			margin-bottom: 1em;
+			text-align: center;
+        
+			@media @mobile {
+				width: 100%;
+			}
+
+			&:before {
+				float: none;
+			}
+		}
+	}
 }
 
 // Basket
