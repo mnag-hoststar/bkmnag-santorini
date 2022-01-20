@@ -364,7 +364,7 @@ blockquote {
     font-size: bkscale(@font-swatch4-font-size, 0.9);
     font-weight: @font-swatch4-font-weight;
     line-height: @font-swatch4-line-height;
-    color: lighten(@color-swatch6,20%);
+    color: fade(@font-swatch5-color, 80%);
     border-radius: 4px;
     font-style: italic;
     word-break: break-word;
@@ -387,8 +387,8 @@ blockquote {
     }
 
     &:before {
-        font-family: georgia;
-        color: @color-swatch3;
+        font-family: Georgia;
+        color: @font-swatch3;
         content: open-quote;
         font-size: 2em;
         line-height: .1em;
@@ -398,7 +398,7 @@ blockquote {
         top: 30px;
     
         .style--light & {
-            color: @contrast--light;
+            color: @color--accent;
         }
     
         .style--accent & {
@@ -406,17 +406,29 @@ blockquote {
         }
     
         .style--dark & {
-            color: @contrast--dark;
+            color: @color--accent;
         }
     }
     
     p {
         display: inline;
         font-family:@font-swatch5-font-family;
-        font-size: bkscale(@font-swatch5-font-size,1.1);
+        font-size: bkscale(@font-swatch5-font-size, 1.1);
         font-weight:@font-swatch5-font-weight;
         line-height:@font-swatch5-line-height;
-        color: lighten(@color-swatch5,20%);
+        color: fade(@font-swatch5-color, 80%);
+
+		.style--light & {
+			color: fade(@contrast--light, 80%);
+		}
+	
+		.style--accent & {
+			color: fade(@contrast--accent, 80%);
+		}
+	
+		.style--dark & {
+			color: fade(@contrast--dark, 80%);
+		}
     }
 }
 
