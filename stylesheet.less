@@ -1753,6 +1753,35 @@ div.widget.extendednavigation {
     .extendednavigation {
         display: block;
         width: 100%;
+
+        // Mobile Menu
+        
+        a.pull {
+            display: none;
+
+            @media @tablet {
+                position: absolute;
+                top: 0;
+                left: 0;
+                display: block;
+                margin: 0 auto;
+            }
+            
+            &:after {
+                content: "";
+                background: @font-swatch6-color;
+                display: inline-block;
+                position: absolute;
+                top: 11px;
+                right: 8px;
+                height: 2px;
+                width: 25px;
+                box-shadow: 0 8px 0 @font-swatch6-color, 0 16px 0 @font-swatch6-color;
+                border-radius: 0;
+            }
+        }
+
+		// Menu Points
         
         ul {
             @media @tablet {
@@ -1781,6 +1810,8 @@ div.widget.extendednavigation {
 				    text-align: center;
                 }
 			}
+
+            // Menu Point
             
             li {
                 display: inline-block;
@@ -1807,18 +1838,6 @@ div.widget.extendednavigation {
                     }
 				}
                 
-                a {
-                    color: @font-swatch6-color;
-                    margin: 0;
-                    padding: 0;
-                    border-bottom: 0;
-                }
-                    
-                .text {
-                    padding: 0.25em 1em;
-                    display: inline-block;
-                }
-                
                 &:hover,
                 &.selected {
                     background-color: darken(@color-swatch2, 3%);
@@ -1839,6 +1858,18 @@ div.widget.extendednavigation {
                         }
 					}
 				}
+                
+                a {
+                    color: @font-swatch6-color;
+                    margin: 0;
+                    padding: 0;
+                    border-bottom: 0;
+                    
+                    .text {
+                        padding: 0.25em 1em;
+                        display: inline-block;
+                    }
+                }
 
 				a,
 				&.folder .text {
@@ -1848,83 +1879,9 @@ div.widget.extendednavigation {
                     }
 				}
 
-				> ul {
-                    @media @tablet {
-					    display: none !important;
-                    }
-				}
-
-				&:hover {
-                    > ul {
-                        display: block !important;
-                        margin: 0 0 0;
-                        padding: 0;
-                        width: 100%;
-                        max-width: none;
-                        background-color: darken(@color-swatch2, 1%);
-
-                        @media @tablet {
-                            display: block !important;
-                            width: 100%;
-                            margin: 0;
-                            padding: 0;
-                            background-color: darken(@color-swatch2,1%);
-                            position: relative;
-                        }
-
-                        > li {
-                            border-bottom: 1px dotted darken(@color-swatch2,10%);
-                            padding-left: 10px;
-
-                            @media @tablet {
-                                border-bottom: 1px dotted @color-swatch6;
-                            }
-
-                            &:last-child {
-                                border-bottom: none;
-
-                                @media @tablet {
-                                    border-bottom: none;
-                                }
-                            }
-
-                            .text {
-                                @media @tablet {
-                                    color: @font-swatch6-color;
-                                }
-                            }
-
-                            &:hover .text {
-                                @media @tablet {
-                                    color: @font-swatch6-color;
-                                }
-                            }
-                        
-                            .text,
-                            &:hover .text {
-                                color: @font-swatch6-color;
-                            }
-
-                            > a {
-                                @media @tablet {
-                                    padding-left: 10px;
-                                }
-
-                                .text:after {
-                                    content: "";
-                                }
-                            }
-                        }
-                    }
-                    
-                    .text {
-                        @media @tablet {
-                            color: @font-swatch6-color;
-                        }
-                    }
-                }
-                
-                &.folder {
+                // Folder
+	
+				&.folder {
                     border-radius: 0;
                     margin: 0;
 
@@ -1956,36 +1913,75 @@ div.widget.extendednavigation {
                             padding-left: 0.5em;
                         }
                     }
-                }
-            }
-            
-            li > ul {
-                display: none !important;
-            }
-        }
-        
-        a.pull {
-            display: none;
 
-            @media @tablet {
-                position: absolute;
-                top: 0;
-                left: 0;
-                display: block;
-                margin: 0 auto;
-            }
-            
-            &:after {
-                content: "";
-                background: @font-swatch6-color;
-                display: inline-block;
-                position: absolute;
-                top: 11px;
-                right: 8px;
-                height: 2px;
-                width: 25px;
-                box-shadow: 0 8px 0 @font-swatch6-color, 0 16px 0 @font-swatch6-color;
-                border-radius: 0;
+                    // Dropdown
+
+                    > ul,
+                    &:hover > ul {
+                        display: none;
+                        margin: 0 0 0;
+                        padding: 0;
+                        width: 100%;
+                        max-width: none;
+                        background-color: darken(@color-swatch2, 1%);
+
+                        @media @tablet {
+                            display: none;
+                            width: 100%;
+                            margin: 0;
+                            padding: 0;
+                            background-color: darken(@color-swatch2,1%);
+                            position: relative;
+                        }
+
+                        > li {
+                            border-bottom: 1px dotted darken(@color-swatch2,10%);
+                            padding-left: 10px;
+
+                            @media @tablet {
+                                border-bottom: 1px dotted @color-swatch6;
+                            }
+
+                            &:last-child {
+                                border-bottom: none;
+
+                                @media @tablet {
+                                    border-bottom: none;
+                                }
+                            }
+                        
+                            .text,
+                            &:hover .text {
+                                color: @font-swatch6-color;
+
+                                @media @tablet {
+                                    color: @font-swatch6-color;
+                                }
+                            }
+
+                            > a {
+                                @media @tablet {
+                                    padding-left: 10px;
+                                }
+
+                                .text:after {
+                                    content: "";
+                                }
+                            }
+                        }
+                    }
+                }
+	
+				// Folder Open
+		
+				&.folder-open ul,
+				&.folder-open:hover ul {
+					display: block;
+    
+					@media @tablet {
+						display: block;
+					}
+				}
             }
         }
     }
