@@ -1,21 +1,15 @@
 <!doctype html>
 <html class="no-js" lang="{{ page.seoLang }}">
-
 	<head>
-
 		{% include "head.twig" %}
-
 		{% include basekit.headScript %}
-	
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
 	</head>
 
 	<body class="{{ page.backgroundClass }}" {{ isV10sSite ? 'id="migrated"' : '' }}>
-
 		{% block content %}
 		{% endblock %}
-
 		{% include "footer.twig" %}
-
 		{% include basekit.bodyScript %}
 		
 		<script type="text/javascript">
@@ -26,7 +20,5 @@
 				if (supportsSVG()) document.documentElement.className += ' svg'
 			}();
 		</script>
-
 	</body>
 </html>
-

@@ -1,7 +1,7 @@
 {
 	"name":"Santorini",
-	"thumbnail":"thumbnail.png",
-	"screenshot":"santorini-screenshot.jpg",
+	"thumbnail":"images/thumbnail.png",
+	"screenshot":"images/screenshot.jpg",
 	"templateType":"standard",
     "versionTenCompatible": 1,
     "pageTypes":["home", "gallery", "contact"],
@@ -10,6 +10,12 @@
     "es": ["minimalista", "limpio", "fotografico", "moderno", "colorido", "flexible", "abierto", "simple", "vacaciones", "serif", "estilo", "slideshow", "galería"],
     "br": ["minimalista", "limpo", "fotografia", "moderno", "colorido", "flexível", "aberto", "simples", "Férias", "serif", "estilo", "slideshow", "galeria"]
     },
+    "images":[
+        "images/feature-bg.jpg",
+        "images/gallery/1.jpg",
+        "images/gallery/2.jpg",
+        "images/gallery/3.jpg"
+    ],
 	"colorSwatches":
        {
         "Swatch 1": {
