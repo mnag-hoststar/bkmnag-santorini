@@ -864,7 +864,7 @@ select {
             margin: 0;
 
 			.style--light & {
-				border-color: @color-swatch1;
+				border-color: @font-swatch7-background-color;
 			}
 
 			.style--accent & {
@@ -1080,6 +1080,7 @@ form.blog-search-form .form-group button,
 	.transition( all, 0.5s, ease);
     min-height: 40px;
     min-width: 100px;
+    height: auto !important;
     word-break: break-word;
 
     .style--light & {
@@ -2007,6 +2008,8 @@ div.widget.extendednavigation {
                                     text-overflow: inherit;
                                     color: @color-swatch3;
                                     background-color: darken(@color-swatch2, 5%);
+                                    overflow: visible;
+                                    word-break: break-word;
                 
                                     @media @tablet {
                                         background-color: lighten(@color-swatch2, 5%);
