@@ -752,7 +752,6 @@ input,
 textarea,
 select {
     flex-grow: 1;
-    color: @font-swatch5-color;
 	text-indent: 0;
 	padding: 7px 10px;
 	height: auto !important;
@@ -760,17 +759,21 @@ select {
     border: 1px solid @font-swatch7-background-color;
     background-color: @color-swatch1;
     .transition( all, 0.5s, ease);
+    color: @font-swatch5-color;
 
     .style--light & {
         border-color: @font-swatch7-background-color;
+        color: @font-swatch5-color;
     }
 
     .style--accent & {
         border-color: @color--dark;
+        color: @font-swatch5-color;
     }
 
     .style--dark & {
         border-color: @color--accent;
+        color: @font-swatch5-color;
     }
     
 	&:hover,
@@ -1986,6 +1989,8 @@ div.widget.extendednavigation {
     
                         @media @tablet {
                             position: static;
+                            min-width: auto;
+                            max-width: none;
                             display: none;
                             padding: 0;
                             max-width: 100%;
