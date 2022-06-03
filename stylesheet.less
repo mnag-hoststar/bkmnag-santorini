@@ -1716,7 +1716,6 @@ form.blog-search-form .form-group button,
     }
 	
 	.wrapper {
-		display: table;
 		.display-flex(flex);
 		.flex-wrap(nowrap);
 		margin: 0 1em 0 1.5em;
@@ -1731,14 +1730,14 @@ form.blog-search-form .form-group button,
 }
 
 .companyheader {
-	display: table-cell;
-	vertical-align: middle;
 	.display-flex(flex);
 	.align-items(center, center);
+    max-width: 30%;
             
 	@media @tablet {
 		display: block;
 		text-align: center;
+        max-width: none;
 	}
 }
 
@@ -1765,7 +1764,7 @@ form.blog-search-form .form-group button,
 		letter-spacing: @font-swatch10-letter-spacing;
 		font-size: @font-swatch10-font-size;
 		word-wrap: normal;
-		word-break: normal;
+		word-break: break-word;
 		
         @media @tablet {
             font-size: bkscale(@font-swatch10-font-size,0.8);
@@ -1783,6 +1782,8 @@ form.blog-search-form .form-group button,
 
 .widget.logo {
 	margin-right: 2em;
+    min-width: 48px;
+    min-height: 48px;
             
 	@media @tablet {
 		margin-right: 0;
@@ -1793,8 +1794,6 @@ form.blog-search-form .form-group button,
 
 .widget.navigation,
 div.widget.extendednavigation {
-	display: table-cell;
-	vertical-align: middle;
 	.display-flex(flex);
 	.align-items(center, center);
 	.flex-grow(1);
